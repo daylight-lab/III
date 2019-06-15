@@ -3,12 +3,22 @@
 This notebook calculates "home bias" in website visits using Alexa rankings.
 
 ## Requirements
-
 - Python3
 - Jupyter
+
+### Python packages:
+
 - BeautifulSoup
 - Requests
 - Funcy
+- textdistance
+
+# Repository
+
+We scrape data in the `data-collection.ipynb` notebook. Output goes into the `data/` folder.
+
+We analyze stuff in `data/` in the `data-analysis.ipynb` notebook. Output goes int the `analysis/` folder.
+
 
 # TODO
 
@@ -19,4 +29,5 @@ This notebook calculates "home bias" in website visits using Alexa rankings.
 Simpler methods:
 - Just see *how different* countries' websites are from one another. Imagine a big confusion matrix....
 - Just compare each country's rankings to the global rankings?
+    - Result: Not a whole lot of diversity. Ranges from 42 to 50. Maybe that's enough diversity, though?
 

@@ -17,8 +17,6 @@ This notebook calculates "home bias" in website visits using Alexa rankings.
 
 We scrape data in the `data-collection.ipynb` notebook. Output goes into the `data/` folder.
 
-We analyze stuff in `data/` in the `data-analysis.ipynb` notebook. Output goes int the `analysis/` folder.
-
 
 # TODO
 

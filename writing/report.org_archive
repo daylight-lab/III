@@ -1,0 +1,66 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /home/ffff/Programs/III/writing/report.org
+
+
+
+
+* Comparing profiles
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-06 Wed 19:03
+  :ARCHIVE_FILE: ~/Programs/III/writing/report.org
+  :ARCHIVE_OLPATH: Reflections
+  :ARCHIVE_CATEGORY: report
+  :END:
+
+Comparing blocks of countries feels a little naughty. These blocks are means,
+and should have variance bars, but that's difficult to describe in a radar chart
+context. Nevertheless, they *do* show us rough "incidence" or "likelihood," which is
+potentially powerful, if we give the proper caveats.
+
+
+* Should we bias metrics directionally toward ``framgnetaiton''?
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-06 Wed 19:08
+  :ARCHIVE_FILE: ~/Programs/III/writing/report.org
+  :ARCHIVE_OLPATH: Reflections
+  :ARCHIVE_CATEGORY: report
+  :END:
+
+It's tempting to make each number get larger as we get into the direction of
+increasing ``fragmentation.'' However, right now, we are just measuring "brute
+facts" about the Internet's structure, without forcing a particular theoretical
+construct on them (yet). So, for the moment, I focused on on the "less fancy"
+option.
+
+Put another way, these metrics, by themselves, /don't require/ the additional
+``theory'' of fragmentation. Currently, these metrics describe diversity at
+different layers of the TCP/IP stack. Why open ourselves up to the additional
+criticism?
+
+If we ever start combining multiple metrics into different layers of the stack,
+then it may make sense introducing the theoretical concept of ``fragmentation''
+(and justifying why our directions are the correct ones). I'm more than happy to
+talk about this design decision further.
+
+
+* Methods issues with website locality
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-11-06 Wed 19:16
+  :ARCHIVE_FILE: ~/Programs/III/writing/report.org
+  :ARCHIVE_OLPATH: Reflections
+  :ARCHIVE_CATEGORY: report
+  :END:
+
+
+One methodological issue with this metric is that large countries /contribute/
+to the global average more than smaller countries, producing a type of sampling
+on the dependent variable. We could minimize this effect by weighting the
+average by the number of Internet users in a given country, but that's a bit
+overly fancy.
+
+Another option might be to construct a ``global average'' list, though I'm not
+entirely clear on how we would do that right now.
+
+

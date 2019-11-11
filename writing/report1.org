@@ -1,0 +1,169 @@
+#+Title: III: Layers of the stack
+#+author: Nick Merrill
+#+options: toc:nil
+#+date: [2019-10-30 Wed]
+* Background
+"Layer models" describe the Internet's composition using hierarchical concepts,
+each defined by their function. Each layer sits "ontop" of the layer beneath it.
+Lower-levels are more basic, and appear at the "bottom" of the stack, whereas
+the more abstracted layers appear at the "top" of the stack.
+
+There are two main "Layer" models for the Internet: the TCP/IP model and the OSI
+model. Both provide some opportunities and challenges for us.
+
+* TCP/IP (networking) 5-layer model
+
+| Layer              | Number  | Example metric              |
+|--------------------+---------+-----------------------------|
+| Legal/social/human | Layer 5 | Data locality laws          |
+| Application        | Layer 4 | Website ranking locality    |
+| Transport          | Layer 3 | Network interference events |
+| Network            | Layer 2 | IPv4/IPv6 transition        |
+| Link               | Layer 1 |                             |
+
+The TCP/IP networking model of the Internet specifically, as opposed to a model
+of a generic network. The TCP/IP model is used in any intro networking courses
+(including MICS W210 - I checked). The question the TCP/IP model answers is, "In
+practice, how is the Internet split into functionally different layers?"
+
+** TCP/IP model layer definitions
+
+- "Layer 5" (legal/social/human). Above the application layer, the "fifth layer"
+  refers to anything regarding human activity. Data locality laws exist "above"
+  the application layer. This layer is not formally included in the model;
+  rather, it's discussed colloquially.
+- Application layer. Standardizes communications across transport layer to
+  create specific-purpose functionality. Web browsing (HTTP/HTTPS) is a familiar
+  example of application-layer software.
+- Transport layer. Abstract network and link layers to provide appearance of
+  persistent connections. Network interference connections disrupt this layer. [fn:1] 
+- Network layer. Transfers data between networks. The IP protocols (either v4 or
+  v6) manage this transfer.
+- Link layer. Transfers data within a local network.
+
+* OSI model
+
+| Layer                             | Number | Example metric              |
+|-----------------------------------+--------+-----------------------------|
+| Individual/organization/political |     8+ | Data locality laws          |
+| Application                       |      7 | Website ranking locality    |
+| Presentation                      |      6 |                             |
+| Session                           |      5 | Network interference events |
+| Transport                         |      4 |                             |
+| Network                           |      3 | IPv4/IPv6                   |
+| Link                              |      2 |                             |
+| Physical                          |      1 |                             |
+
+The OSI networking model seeks to describe general telecommunications platforms,
+and is not specific to the Internet. It is an ISO standard (ISO/IEC 7498), and
+was initially developed to allow interoperability (hah!) between disparate
+network devices and software.
+
+The OSI model introduces a few new layers, and redefines some familiar ones. The
+main differences from the TCP/IP model are (1) the introduction of the physical layer,
+(2) the split between "application" and "presentation" layers, and (3) the split
+between the "session" and "transport" layers.
+
+** OSI model layer definitions
+
+- "Layer 8 and above." Again, though not included in the formal model, "layer 8"
+  colloquially refers to the "user" or "political" layer that "runs ontop of"
+  the OSI stack. Bruce Schneier further divides this layer into layers 8 (the
+  individual), 9 (the organization) and 10 (legal/political). However, the term
+  "layer 8" appears to be more common in colloquial usage.
+- Application layer. (No change).
+- Presentation layer. Translation of data between a networking service and an
+  application. Examples include UNICODE, which translates bytes to visual
+  glyphs.
+- Session layer. Abstract transport layer to provide appearance of persistent connections.
+- Transport layer. Reliable transmission of data segments between points on a network (e.g., segmentation, acknowledgment and multiplexing
+- Network layer. (No change).
+- Link layer. (No change).
+- Physical layer. The physical devices that emit, transmit, and receive data. Examples include ethernet cables, network chips, or the radio transmitters that emit WiFi or Bluetooth.
+
+* Recommendations and reflections
+
+** Pros & cons of using the TCP/IP model
+
+Pros:
+- Anyone who knows the OSI model will also know the TCP/IP model terms
+- We have roughly one metric per layer already
+- We are able to move to the OSI model later as we get more metrics and more detail.
+
+Cons:
+- Fewer layers, less subtly to the division between layers. Could limit growth.
+- Some people may ask why we didn't use the OSI model. One explanation might be
+  that we were focused on the Internet specifically, whereas OSI is a generic
+  model of telecom networks. 
+
+** Pros & cons of using the OSI model
+
+Pros:
+- "Layer 8" appears to be a more common way of referring to the "human layer"
+  than "layer 5." It also gives us some more subtlety up here [[https://web.archive.org/web/20130524214239/http://blogs.rsa.com/engineering-security-solutions-at-layer-8-and-above/][due to Bruce
+  Schneier]]: we can further expand into the "individual," "organization" and
+  "government or legal" layers 8-10 in the future.
+- When network professionals describe attacks, they will typically refer to the
+  OSI model layers. For example, DHCP spoofing is a "layer-2 attack," even
+  though DHCP is Layer 1 of the TCP/IP model.
+- It's an ISO standard, originally designed for interoperability, which may be a
+  core theoretical construct for our project.
+
+Cons:
+- *Lots* of layers, *lots* of terminology to introduce.
+- We do not have a metric for many layers.
+- Since the OSI model is not as Internet-specific as TCP/IP
+
+** My recommendation
+
+I vote that we begin with the TCP/IP layer model. It makes for an easier story
+in the context of a quick pitch, minimizing confusing terms to introduce, and
+maximizing the ostensible conceptual coverage of our metrics.
+
+In the Medium post, we can always make a quick mention that we'll consider
+moving to the OSI model as we add more metrics. 
+
+Alternatively, we can always integrate new layers (e.g., the physical layer)
+into our TCP/IP model to produce a reasonable, purpose-built hybrid.
+
+** Reflections
+
+*** Choosing layers of the stack
+
+It *almost* goes without saying, but none of these metrics fit neatly and
+perfectly into exactly one layer of the network. We always knew that would be
+the case. Even the seemingly-straightforward "IPv4/IPv6 transition" metric is
+entangled with all other layers of the stack: What do link layers support? What
+do transport layers allow? What do applications require? What legal mechanisms
+incentivize the transition?
+
+Nevertheless, within a finite set of options, each metric has a clear "home" in
+any given model. Once we pick a model, we can provide a clear rationale for this
+"home" next to the description of the layer. (A proper web dashboard would make
+these explanations easy to explore, too).
+
+One heuristic for solving these conundrums is to ask, "What is the highest level
+of the stack this phenomenon affects?" For example, network interference events
+happen at both the transport and session layers of the OSI stack. [fn:2]
+However, network interference events happen only as high as the session layer
+(they break or disrupt user connections with services).
+
+*** Future questions
+
+Looking at the OSI model, I'm realizing some questions we could ask in the future. 
+- Does everyone use UNICODE (presentation layer)? 
+- What proportion of the Internet uses TCP, UDP, QUC (transport layer of OSI model)?
+
+It also reminds me of a question we've asked in the past:
+- When do physical layer differences matter? How can we measure these differences?
+
+These questions are out of scope for this sprint, but I do believe that they matter.
+
+
+Archived entries from file /home/ffff/Programs/III/writing/report.org
+* Footnotes
+
+[fn:2] Sometimes they occur as low as level 2, as in BPG poisoning, but that's rare.
+
+[fn:1] Network and link layers work by message-passing; there is no notion of a
+"connection" in these layers."

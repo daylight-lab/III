@@ -4,130 +4,94 @@
 #+options: toc:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css" />
 
+* Surprising divergences
+
+
+
+*Countires you would expect to be similar are sometimes quite different*. 
+Take China and its Belt & Road partners [fn:2]. Per popular
+imagination, China's model of the Internet has set a precedent, one which other
+Belt and Road countries follow.
+
+[[./figures/china-vs-belt-and-road.png]]
+
+Our data challenges that assumption. In fact, China stands out from other Belt &
+Road countries. It has more data locality laws, a high degree of website
+locality (perhaps as a result of censorship[fn:4]), and significantly higher
+network interference. In fact, China's only similarity with other Belt & Road
+countries are its low rates of IPv6 adoption.
+
+[[./figures/in-bd.png]]
+
+Alternatively, consider India and Bangladesh. Despite similar culture, history,
+and geographic locality, these two regional neighbors have substantially
+different profiles.
+
+* Unexpected similarities
+
+[[./figures/no-vs-islamic.png]]
+
+*Countries you would expect to be different can be surprisingly similar*. If you
+asked me what Norway has in common with Saudi Arabia, Kuwait, UAE, etc, I'd have
+said "aside from oil, not much."
+
+In reality, these countires have similar amounts of network interference, a
+similar degree of content-layer locality, and similar IPv6 penetration. The main
+difference that our profiles captures is simply that these Gulf states tend not
+to have laws restricting the flow of data.
+
+
 * The Internet is not bi-polar
 
 
 [[./figures/us-cn-bh-de.png]]
 
+
+*The Internet is multi-polar, with different Internet governance decisions
+producing diverse types of fragmentation.*
 It's tempting to imagine a bi-polar Internet, with China on one side, and the
 West on the other. In this model, it would be tempting to place, for example,
 Bahrain on the China ``side.'' Germany might sit on the ``US side.'' Our metrics
 reveal a much more complex picture. /In fact, all four countries mentioned here
 have different profiles to one another/.
 
-*The Internet is multi-polar, with different Internet governance decisions
-producing diverse types of fragmentation.*
-* Surprising divergences
+* So what?
 
+Our profiles allow us to view 'internet fragmentation' in a more nuanced way.
+Through this view, policymakers and advocates can describe how /specifically/
+the internet differs across national borders.
 
+*These specific metrics could help policymakers, advocacy organizations and
+academics work toward specific, data-driven goals*. In doing so, they stand a
+chance at de-fragmenting the Internet in a targeted way.
 
-For example, take China and the other Belt & Road countries. Per popular
-imagination, China's model of the Internet has set a precedent, which is being
-followed by its Belt and Road allies. Our data challenges that assumption.
+*Our data could provide industry stakeholders with a roadmap for moving from one
+market to another*. For example, if a technology company is thinking of moving
+from the United States to Southeast Asia, they could use our data to select
+those countries with which the United States has a similar Internet.
 
-
-[[./figures/china-vs-belt-and-road.png]]
-
-In fact, China stands out in its data locality laws, its high degree of website
-locality (perhaps as a result of censorship[fn:4]), its higher network
-interference, and its propensity toward data laws. In fact, China's only
-similarity with other Belt & Road countries are its low IPv6 penetration.
-
-[[./figures/in-bd.png]]
-
-Alternatively, consider India and Bangladesh. These two regional neighbors have
-substantially different profiles.
-
-*Countires you would expect to be similar are sometimes quite different*. 
-
-* Unexpected similarities
-
-[[./figures/no-vs-islamic.png]]
-
-If you asked me what Norway has in common with Saudi Arabia, Kuwait, UAE, etc,
-I'd have said ``aside from oil, not much.''
-
-In reality, these countires have equivalent amounts of network interference,
-similar content-layer locality, and similar IPv6 penetration. The main
-difference that our profiles captures is simply that these Gulf states tend not
-to have laws restricting the flow of data.
-
-*Countries you would expect to be different can be surprisingly similar*.
-
-* TODO So what?
-** View 'internet fragmentation' in a more nuanced way, one that can guide guid policy
-like US from 5-eyes
-guide policy to get from A to B
-** Guide policy smooth transitions between markets
-* TODO Future work: Clusters of interoperability
+** Future work: Clusters of interoperability
 <<future-work>>
 
-# Comapring countries that are 'interoperable with one another'
+While our current work compares countries on a global scale,
+future work could create point-to-point comparisons of countries,
+producing *clusters of Internets
+that are interoperable with one another*.
 
-are countries interoperable *with each other*?
-for example, right now we look at how smilar content layer is to global,
- but what about argentina's content layer compared to chile's
-
-this is
-the /real/ ""clusters of internets" question
-
-just calling them out may help them go away
-*SO WHAT OF THIS*:
-in any case, these clusters could become a key strategic planning tool
- for shifting between markets
- or for crafting policy
+For example, on our content layer, we currently look at how similar popular
+websites are to a global average. 
+- But how similar is Argentina's list of most popular websites compared to Chile's? 
+- How similar are the /types/ of network interference in Argentina vs Chile? 
+- Both countries may have data laws, but do they have the /same/ or /similar/ data laws?
 
 
-* TODO Reflections
-** Just calling out clusters may help them go away---or make them more severe
-briefly: what's the theory of change here?
+With this tool, policymakers could create more targeted interventions to, for
+example "join the five-eyes Internet" or "move away from the Belt & Road
+internet."
 
-** Am I convinced?
-
-Currently, it's a little difficult to interpret these data outside of their
-specific meeting. For example, to me, IPv6 is a more immediate proxy of a
-country's "development" (another ambiguous term) than it is a proxy of
-"fragmentation."
-
-Of all of the metrics, website locality convinces me the most. It's a measure of
-actual user behavior. I am sure network interference matters (and may matter
-more if we split it down by interference type), but ultimately, the experience
-of e.g., censorship may more acutely felt in the context of website locality (as
-is the case with China).
-
-In general, behavioral measures may appear more at the content layer. I'm not
-sure that's a bad thing. The content layer shows us what people are, in
-practice, doing. Yes, maybe laws that restrict data flows matter, but can we
-observe that with actual behavior?
-
-** TODO ``Locality'': What's in a name?
-
-For many of our findings, *locality* makes more sense than /interoperability/ or /fragmentation/.
-
-If we, in fact, want to look at ``interoperability'' (and I think we should),
-then we should propose *that* as our next step---see [[future-work]].
-
-# more like internet character profiles
-
-# we also assume that index is going to be the one thing that sells
-# maybe, maybe not... maybe these indices are also appropriate.
-** TODO Future work
-*** Expanding metrics per layer
-
-In layer 4, we may be interested in DNS consistency as one measure of
-Internet-level fragmentation. DNS consistency has a clear relationship to the
-experience of browsing the Internet: what websites *can* you visit? It would be
-worth researching possible sources for this data.
-
-In general, in the future, it's worth thinking about how we would deal with
-multiple metrics per layer. They don't fit neatly into our radar graph any more,
-and we may have to do some averaging per-layer to compute a composite metric.
-There's some art to this, I figure, and we should be mindful of that as we
-expand horizontally within TCP/IP layers.
-*** UI wishlist
-
-It would also be great to view metrics in greater detail on rollover. We
-certainly want our APIs to support that.
+Those in industry could use these clusters as a key strategic planning tool,
+allowing them to move products across Internets that, despite superficial
+differences, are actually quite interoperable.
 
 * Footnotes
 

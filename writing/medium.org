@@ -1,0 +1,25 @@
+
+* How we analyze our data
+
+We produce a "radar" (or "spiderweb") plot. The radar plot describes a given
+country's spread across the four metrics we currently measure. By visually
+comparing these radar plots, we can establish rough "profiles" for
+countries.
+
+[[./figures/scandinavians.png]]
+
+Here's an example. It compares the Scandinavian countries to one another. This
+chart shows us that Norway has a higher rate of network interference than its
+neighbors, while Sweden has a higher level of content-layer locality, and
+Denmark has more legal-layer locality.
+
+[[./figures/three-bloc.png]]
+
+We can also average multiple countries' metrics together to create /blocks/.
+Here's an example comparing Five Eyes countries[fn:3], Belt & Road countries, and
+Islamic theocracies. Overall, Belt & Road countries have the same rate of
+network interference, which is surprising. However, Belt & Road countries[fn:2]  have
+higher content-layer locality, and more data
+regulations. Interestingly, it is the Islamic theocracies[fn:1] who have the highest
+incidence of network interference, though they, overall, have no laws regulating
+data.

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-11-11 Mon 15:15 -->
+<!-- 2019-11-11 Mon 18:36 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>III: What have we learned?</title>
@@ -231,31 +231,10 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">III: What have we learned?</h1>
-<p>
-We are using a fragmented (ha ha) version of the Network Interference metric for
-now, where we look at <b>only</b> website blocking events. We're running up against
-the usual troubles with big data, and I certainly expect to compute the full
-metric soon, but don't want to put undue pressure on my data discovery student
-as she figures things out. Our findings may change a bit as we compute the data,
-but my guess is that the major "so what" will remain. As such, I am labeling
-these findings ``initial.'' They are no longer ``preliminary,'' but they're not
-``final,'' either.
-</p>
 
-<div id="outline-container-orgb243266" class="outline-2">
-<h2 id="orgb243266"><span class="section-number-2">1</span> Our main findings</h2>
+<div id="outline-container-org696078e" class="outline-2">
+<h2 id="org696078e"><span class="section-number-2">1</span> The Internet is not bi-polar</h2>
 <div class="outline-text-2" id="text-1">
-</div>
-<div id="outline-container-orgc1f6032" class="outline-3">
-<h3 id="orgc1f6032"><span class="section-number-3">1.1</span> The Internet is far from bi-polar</h3>
-<div class="outline-text-3" id="text-1-1">
-<p>
-It's tempting to imagine a bi-polar Internet, with China on one, ``non-free''
-side, and the West on the other. In this model, it would be tempting to place,
-for example, Bahrain on the China ``side.'' Germany might sit on the ``US
-side.''
-</p>
-
 
 <div class="figure">
 <p><img src="./figures/us-cn-bh-de.png" alt="us-cn-bh-de.png" />
@@ -263,73 +242,121 @@ side.''
 </div>
 
 <p>
-Our metrics reveal a much more complex picture. In fact, all four countries
-mentioned here have much different profiles to one another. The Internet is
-likley multi-polar, with different Internet governance decisions producing
-diverse types of fragmentation.
+It's tempting to imagine a bi-polar Internet, with China on one side, and the
+West on the other. In this model, it would be tempting to place, for example,
+Bahrain on the China ``side.'' Germany might sit on the ``US side.'' Our metrics
+reveal a much more complex picture. <i>In fact, all four countries mentioned here
+have different profiles to one another</i>.
+</p>
+
+<p>
+<b>The Internet is multi-polar, with different Internet governance decisions
+producing diverse types of fragmentation.</b>
 </p>
 </div>
 </div>
-
-<div id="outline-container-org07cff73" class="outline-3">
-<h3 id="org07cff73"><span class="section-number-3">1.2</span> ``Blocks'' are often self-similar</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-org9d32e36" class="outline-2">
+<h2 id="org9d32e36"><span class="section-number-2">2</span> Surprising divergences</h2>
+<div class="outline-text-2" id="text-2">
 <p>
-In spite of these surprises, our metrics do allow "profiles" of similar to emerge.
-Five eyes, Belt and Road, and even regions such as the Caribbean all
-show patterns that are similar to one another. Doing so allows us
+For example, take China and the other Belt &amp; Road countries. Per popular
+imagination, China's model of the Internet has set a precedent, which is being
+followed by its Belt and Road allies. Our data challenges that assumption.
+</p>
+
+
+
+<div class="figure">
+<p><img src="./figures/china-vs-belt-and-road.png" alt="china-vs-belt-and-road.png" />
+</p>
+</div>
+
+<p>
+In fact, China stands out in its data locality laws, its high degree of website
+locality (perhaps as a result of censorship<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>), its higher network
+interference, and its propensity toward data laws. In fact, China's only
+similarity with other Belt &amp; Road countries are its low IPv6 penetration.
 </p>
 
 
 <div class="figure">
-<p><img src="./figures/three-bloc.png" alt="three-bloc.png" />
+<p><img src="./figures/in-bd.png" alt="in-bd.png" />
 </p>
 </div>
 
 <p>
-Nevertheless, even within similar blocks, there are important differences to
-tease out: IPv6 adoption, content layer differences, and network interference
-all vary within otherwise "similar" countries, revealing unexpected differences.
-For example, the United States has <span class="underline">XXXXXXXXXXXXXXX</span> than its Five Eyes allies.
+Alternatively, consider India and Bangladesh. These two regional neighbors have
+substantially different profiles.
+</p>
+
+<p>
+<b>Countires you would expect to be similar are sometimes quite different</b>. 
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgbd9ba94" class="outline-3">
-<h3 id="orgbd9ba94"><span class="section-number-3">1.3</span> Countries you would expect to be similar can be different in some ways</h3>
+
+<div id="outline-container-org8d8fb3c" class="outline-2">
+<h2 id="org8d8fb3c"><span class="section-number-2">3</span> Unexpected similarities</h2>
+<div class="outline-text-2" id="text-3">
+
+<div class="figure">
+<p><img src="./figures/no-vs-islamic.png" alt="no-vs-islamic.png" />
+</p>
 </div>
-<div id="outline-container-org50bc50a" class="outline-3">
-<h3 id="org50bc50a"><span class="section-number-3">1.4</span> Countries you would expect to be different are similar in some ways</h3>
+
+<p>
+If you asked me what Norway has in common with Saudi Arabia, Kuwait, UAE, etc,
+I'd have said ``aside from oil, not much.''
+</p>
+
+<p>
+In reality, these countires have equivalent amounts of network interference,
+similar content-layer locality, and similar IPv6 penetration. The main
+difference that our profiles captures is simply that these Gulf states tend not
+to have laws restricting the flow of data.
+</p>
+
+<p>
+<b>Countries you would expect to be different can be surprisingly similar</b>.
+</p>
 </div>
 </div>
-<div id="outline-container-org0ef99ed" class="outline-2">
-<h2 id="org0ef99ed"><span class="section-number-2">2</span> <span class="todo TODO">TODO</span> So what?</h2>
-<div class="outline-text-2" id="text-2">
+
+
+<div id="outline-container-orgfeca3cf" class="outline-2">
+<h2 id="orgfeca3cf"><span class="section-number-2">4</span> <span class="todo TODO">TODO</span> So what?</h2>
+<div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org718fd4a" class="outline-3">
-<h3 id="org718fd4a"><span class="section-number-3">2.1</span> <span class="todo TODO">TODO</span> What we can do with these findings?</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-org7cea177" class="outline-3">
+<h3 id="org7cea177"><span class="section-number-3">4.1</span> <span class="todo TODO">TODO</span> What we can do with these findings?</h3>
+<div class="outline-text-3" id="text-4-1">
 </div>
-<div id="outline-container-org43ccd12" class="outline-4">
-<h4 id="org43ccd12"><span class="section-number-4">2.1.1</span> Guide policy smooth transitions between markets</h4>
-<div class="outline-text-4" id="text-2-1-1">
+<div id="outline-container-orgf2ebb0b" class="outline-4">
+<h4 id="orgf2ebb0b"><span class="section-number-4">4.1.1</span> Guide policy smooth transitions between markets</h4>
+<div class="outline-text-4" id="text-4-1-1">
 </div>
 <ol class="org-ol">
-<li><a id="org870edb6"></a>We can see how countries "stand out from their pack" in particular dimensions<br />
-<div class="outline-text-5" id="text-2-1-1-1">
+<li><a id="org4354d05"></a>We can see how countries "stand out from their pack" in particular dimensions<br />
+<div class="outline-text-5" id="text-4-1-1-1">
 <p>
 like US from 5-eyes
 </p>
 </div>
 </li>
-<li><a id="org4b6c62b"></a>How to get from A to B<br /></li>
+<li><a id="org402a1f4"></a>How to get from A to B<br /></li>
 </ol>
 </div>
 </div>
+</div>
 
-<div id="outline-container-org5a27d8d" class="outline-3">
-<h3 id="org5a27d8d"><span class="section-number-3">2.2</span> What's next?</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-orgc60bb87" class="outline-2">
+<h2 id="orgc60bb87"><span class="section-number-2">5</span> <span class="todo TODO">TODO</span> Future work: Clusters of interoperability</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+<a id="orgf71b122"></a>
+</p>
+
 <p>
 are countries interoperable <b>with each other</b>?
 for example, right now we look at how smilar content layer is to global,
@@ -349,15 +376,14 @@ in any case, these clusters could become a key strategic planning tool
 </p>
 </div>
 </div>
-</div>
 
-<div id="outline-container-orgc8c37a0" class="outline-2">
-<h2 id="orgc8c37a0"><span class="section-number-2">3</span> <span class="todo TODO">TODO</span> Reflections</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org8839859" class="outline-2">
+<h2 id="org8839859"><span class="section-number-2">6</span> <span class="todo TODO">TODO</span> Reflections</h2>
+<div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org1a2de13" class="outline-3">
-<h3 id="org1a2de13"><span class="section-number-3">3.1</span> Am I convinced?</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-org5c361b1" class="outline-3">
+<h3 id="org5c361b1"><span class="section-number-3">6.1</span> Am I convinced?</h3>
+<div class="outline-text-3" id="text-6-1">
 <p>
 Currently, it's a little difficult to interpret these data outside of their
 specific meeting. For example, to me, IPv6 is a more immediate proxy of a
@@ -382,27 +408,26 @@ observe that with actual behavior?
 </div>
 </div>
 
-<div id="outline-container-org91440be" class="outline-3">
-<h3 id="org91440be"><span class="section-number-3">3.2</span> <span class="todo TODO">TODO</span> What's in a name?</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-orga0295c2" class="outline-3">
+<h3 id="orga0295c2"><span class="section-number-3">6.2</span> <span class="todo TODO">TODO</span> ``Locality'': What's in a name?</h3>
+<div class="outline-text-3" id="text-6-2">
 <p>
-Really either interoperability <b>or</b> an index right now
-more like internet character profiles
+For many of our findings, <b>locality</b> makes more sense than <i>interoperability</i> or <i>fragmentation</i>.
 </p>
 
 <p>
-we also assume that index is going to be the one thing that sells
-maybe, maybe not&#x2026; maybe these indices are also appropriate.
+If we, in fact, want to look at ``interoperability'' (and I think we should),
+then we should propose <b>that</b> as our next step&#x2014;see <a href="#orgf71b122">5</a>.
 </p>
 </div>
 </div>
-<div id="outline-container-orgc3af8e0" class="outline-3">
-<h3 id="orgc3af8e0"><span class="section-number-3">3.3</span> <span class="todo TODO">TODO</span> Future work</h3>
-<div class="outline-text-3" id="text-3-3">
+<div id="outline-container-org62d74a0" class="outline-3">
+<h3 id="org62d74a0"><span class="section-number-3">6.3</span> <span class="todo TODO">TODO</span> Future work</h3>
+<div class="outline-text-3" id="text-6-3">
 </div>
-<div id="outline-container-orgd4edfdf" class="outline-4">
-<h4 id="orgd4edfdf"><span class="section-number-4">3.3.1</span> Expanding metrics per layer</h4>
-<div class="outline-text-4" id="text-3-3-1">
+<div id="outline-container-orgb3928f2" class="outline-4">
+<h4 id="orgb3928f2"><span class="section-number-4">6.3.1</span> Expanding metrics per layer</h4>
+<div class="outline-text-4" id="text-6-3-1">
 <p>
 In layer 4, we may be interested in DNS consistency as one measure of
 Internet-level fragmentation. DNS consistency has a clear relationship to the
@@ -419,9 +444,9 @@ expand horizontally within TCP/IP layers.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb229b6e" class="outline-4">
-<h4 id="orgb229b6e"><span class="section-number-4">3.3.2</span> UI wishlist</h4>
-<div class="outline-text-4" id="text-3-3-2">
+<div id="outline-container-org3eef4bf" class="outline-4">
+<h4 id="org3eef4bf"><span class="section-number-4">6.3.2</span> UI wishlist</h4>
+<div class="outline-text-4" id="text-6-3-2">
 <p>
 It would also be great to view metrics in greater detail on rollover. We
 certainly want our APIs to support that.
@@ -430,11 +455,21 @@ certainly want our APIs to support that.
 </div>
 </div>
 </div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+Websites whitelisted by the Great Firewall are likely to be Chinese.
+</p></div></div>
+
+
 </div>
+</div></div>
 <div id="postamble" class="status">
 <p class="date">Date: 2019-11-11 Mon 00:00</p>
 <p class="author">Author: Nick Merrill</p>
-<p class="date">Created: 2019-11-11 Mon 15:15</p>
+<p class="date">Created: 2019-11-11 Mon 18:36</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

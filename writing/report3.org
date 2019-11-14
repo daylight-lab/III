@@ -40,7 +40,6 @@ similar degree of content-layer locality, and similar IPv6 penetration. The main
 difference that our profiles captures is simply that these Gulf states tend not
 to have laws restricting the flow of data.
 
-
 * The Internet is not bi-polar
 
 

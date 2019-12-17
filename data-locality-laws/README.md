@@ -1,10 +1,9 @@
 # CLTC
 
-Repo for Internet Fragmentation research
+A dataset of data-related laws, coded by category.
 
+Sources used to compile data:
 
-
-Readings:
 1. https://www.state.gov/reports/2018-investment-climate-statements/
 2. https://ecipe.org/dte/database/
 3. https://www.itic.org/public-policy/SnapshotofDataLocalizationMeasures1-19-2017.pdf

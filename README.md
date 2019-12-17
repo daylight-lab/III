@@ -1,26 +1,24 @@
 # III
 
-Internet Interoperability Index
+Code and data for the Internet Interoperability project.
 
+You can view the [motivation behind this project, and the metrics we compute, here](https://docs.google.com/document/d/1w3cEedn49wXrF_PF072m-9NRyK0SiD-Ah-bI5cUt-9Q/edit?usp=sharing).
 
 ## Running the notebooks
 
-In the main repo directory, run a jupyter notebook.
+Run a Jupyter notebook in the main repository directory.
 
 ```
 cd III/
 jupyter notebook
 ```
 
-Each subfolder is responsible for computing particular metrics. Refer to each folder's README for details.
+The notebook `analysis.ipynb` is computes comparative metrics and summary
+statistics. The notebook `marshaling.ipynb` collates data from individual
+metrics.
 
-# Todos
-
-- Find a way to occasionally update shared data.
-
-# Ideas
-
-- Metrics can grab data asynchronously; new indices are lazily evaluated & cached.
+Each subfolder is responsible for computing particular metrics. Refer to each
+folder's README for details.
 
 ## License
 

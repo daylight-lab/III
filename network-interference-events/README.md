@@ -14,11 +14,8 @@ Similarly, the loose rate is calculated as below:
 Together, these frequencies can give insight into which countries Internet users face issues in regards to accessing information online and how these trends can be associated to real-world events.
 
 ## Getting started
-**Required language**: Python v. 3.6.0 or later
 
-**Required packages**: pandas, sqlalchemy, sys, time
-
-**Set up an AWS EC2 instance** to replicate the OONI MetaDB by following [these instructions](aws-setup.md).
+**Set up an AWS EC2 instance** to replicate the OONI MetaDB by [following these instructions](aws-setup.md).
 
 ## Calculating rates between date ranges
 The calculate\_rates.py script takes two required arguments (start date, end date) and one optional argument (filename for resulting table). To generate a table representing aggregate data including the strict / loose rates over the year 2019, run the following in the repo directory:

@@ -1,20 +1,30 @@
 # Internet Interoperability Index: Network Interference
+The script in this repo calculates two summary metrics based on data from the Open Observatory of Network Interference (OONI), a global organization that works to detect Internet censorship. OONI probes in various countries collect measurements when a user runs one of their online tests, and each measurement can be flagged as:
+- **anomaly**: a potential act of censorship that is difficult to distinguish from transient network issues (e.g. IP blocking)
+- **confirmed**: the user was confirmed as being prevented from accessing the input website
 
-## Running the notebooks
-In the main repo directory, run a jupyter notebook.
+We calculate strict and loose rates of network interference in various geographical areas by aggregating how frequently individual anomalous / confirmed events occur in those locations. The formula for the strict rate is:
 
-```
-cd network_interference/
-jupyter notebook
-```
+<p align = "center"><img src="https://render.githubusercontent.com/render/math?math=\frac{\text{number of confirmed events}}{\text{total number of events}}"></p>
 
-The yearly-interference-analysis file includes EDA, strict / loose rate network interference index calculations, and visualizations. 
+Similarly, the loose rate is calculated as below:
 
-The try-database-connection notebook helps test whether the OONI metadb has been set up correctly in postgres.
+<p align = "center"><img src="https://render.githubusercontent.com/render/math?math=\frac{\text{number of confirmed events} %2B \text{number of anomalous events}}{\text{total number of events}}"></p>
 
-## Calculating rates between date ranges
+Together, these frequencies can give insight into which countries Internet users face issues in regards to accessing information online and how these trends can be associated to real-world events.
+
+## Getting started
+**Required language**: Python v. 3.6.0 or later
+
 **Required packages**: pandas, sqlalchemy, sys, time
 
+To set up a copy of the OONI metadb which contains the measurement-specific data needed for this analysis, create an AWS EC2 instance by following [OONI's metadb sharing directions](https://github.com/ooni/sysadmin/blob/master/docs/metadb-sharing.md).
+
+Then, verify that the database has been set up properly and is accessible via Python's sqlalchemy library by following the steps in this [gist](https://gist.github.com/lilybhattacharjee5/5da4dee957dd2cb58962c9ffe466ce2e).
+
+To run calculate\_rates.py as below, download this repo to any directory. If the metadb connection in step 5 of the gist works, the script should run without errors.
+
+## Calculating rates between date ranges
 The calculate\_rates.py script takes two required arguments (start date, end date) and one optional argument (filename for resulting table). To generate a table representing aggregate data including the strict / loose rates over the year 2019, run the following in the repo directory:
 
 ```
@@ -42,3 +52,6 @@ echo -e "hot_standby = 'on'\nhot_standby_feedback = 'on'" | sudo -u postgres dd 
 
 ## License
 BSD-3
+
+## Acknowledgments
+- [Open Observatory for Network Interference](https://ooni.org): data and metadb documentation

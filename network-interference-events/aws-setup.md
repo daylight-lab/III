@@ -4,8 +4,6 @@
    data needed for this analysis, create an AWS EC2 instance by following
    [OONI's metadb sharing
    directions](https://github.com/ooni/sysadmin/blob/master/docs/metadb-sharing.md).
-   Instead of selecting the 16.04, **select the Ubuntu 16.04 deep Learning kit**
-   (which includes Jupyter notebook)
 1. After tunneling into the EC2 instance, run <code>sudo -u postgres psql -U
    postgres metadb -c 'SELECT MAX(bucket_date) FROM autoclaved'</code> to check
    that the output matches the day before the download.

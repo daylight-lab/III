@@ -18,11 +18,7 @@ Together, these frequencies can give insight into which countries Internet users
 
 **Required packages**: pandas, sqlalchemy, sys, time
 
-To set up a copy of the OONI metadb which contains the measurement-specific data needed for this analysis, create an AWS EC2 instance by following [OONI's metadb sharing directions](https://github.com/ooni/sysadmin/blob/master/docs/metadb-sharing.md).
-
-Then, verify that the database has been set up properly and is accessible via Python's sqlalchemy library by following the steps in this [gist](https://gist.github.com/lilybhattacharjee5/5da4dee957dd2cb58962c9ffe466ce2e).
-
-To run calculate\_rates.py as below, download this repo to any directory. If the metadb connection in step 5 of the gist works, the script should run without errors.
+**Set up an AWS EC2 instance** to replicate the OONI MetaDB by following [these instructions](aws-setup.md).
 
 ## Calculating rates between date ranges
 The calculate\_rates.py script takes two required arguments (start date, end date) and one optional argument (filename for resulting table). To generate a table representing aggregate data including the strict / loose rates over the year 2019, run the following in the repo directory:
